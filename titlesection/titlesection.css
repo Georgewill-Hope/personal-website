@@ -1,11 +1,9 @@
-h1 {
-    color: blue;
+:root{
+    --titleSectionPrimaryColor: white;
 }
 
-button:hover {
-    background-color: red;
-    cursor: pointer;
-    font-size: 20px;
+h1 {
+    color: var(--titleSectionPrimaryColor);
 }
 
 #title {
@@ -14,4 +12,18 @@ button:hover {
     background-image: url('../images/bg.jpg');
     background-position: center top;
     background-repeat: no-repeat;
+    color: var(--titleSectionPrimaryColor);
+}
+
+.title-section-button{
+    color: var(--titleSectionPrimaryColor);
+    border: solid var(--titleSectionPrimaryColor) 1px;
+    padding: 15px 20px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.title-section-button:hover {
+    background-color: red;
+    cursor: pointer;
 }
