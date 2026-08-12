@@ -16,6 +16,14 @@ h1 {
     color: var(--titleSectionPrimaryColor);
 }
 
+.title-section-header {
+    margin-bottom: -5px;
+}
+
+.title-section-subtitle{
+    margin-bottom: 40px;
+}
+
 .title-section-button{
     color: var(--titleSectionPrimaryColor);
     border: solid var(--titleSectionPrimaryColor) 1px;
