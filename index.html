@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="./titlesection/titlesection.css">
     <link rel="stylesheet" href="./aboutmesection/aboutmesection.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Armata">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
   </head>
   <body>
     <div class="main-section" id="title">
@@ -14,6 +15,14 @@
       <div class="text-block-container">
         <h1>About Me</h1>
         <p class="aboutme-section-description">I am a graduate of sociology now turned full-time Software Engineer. I offer fully-fledged Websites utilizing HTML, CSS, JavaScript, BootStrap, TypeScript, SASS, Tailwind, Framer-Motion, MongoDB, Sanity built upon the renowned React Framework NEXT JS. Tailored for full stack developers, it's ideal for Tech Companies, Photo Studios, Real Estate agencies and more. Its responsiveness and functionalities ensures a stunning display and seamless interactivity across diverse devices, from laptops and tablets to mobiles.</p>
+
+        <div class="aboutme-icons">
+          <i class="aboutme-icon fa-brands fa-linkedin-in"></i>
+          <i class="aboutme-icon fa-brands fa-instagram"></i>
+          <i class="aboutme-icon fa-brands fa-square-facebook"></i>
+          <i class="aboutme-icon fa-regular fa-envelope"></i>
+          <i class="aboutme-icon fa-brands fa-x-twitter"></i>
+        </div>
       </div>
     </div>
   </body>
@@ -36,22 +45,22 @@
     height: 100vh;
     background-size: cover;
     padding: 25px;
-}
+  }
 
-.misc-section{
-  width: 100%;
-  padding: 100px 25px;
-}
+  .misc-section{
+    width: 100%;
+    padding: 120px 25px;
+  }
 
-.text-block-container{
-  width: 65%;
-  margin: 0 auto;
-}
-
-@media screen and (max-width:500px) {
   .text-block-container{
-  width: 100%;
-}
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width:500px) {
+    .text-block-container{
+    width: 100%;
+  }
 }
 </style>
 <script>
