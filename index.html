@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./titlesection/titlesection.css">
+    <link rel="stylesheet" href="./aboutmesection/aboutmesection.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Armata">
   </head>
   <body>
@@ -9,10 +10,16 @@
       <p class="title-section-subtitle">Empowering Individuals Through Education</p>
       <button class="title-section-button" onclick="makeDreamComeTrue()">Combine Knowledge with action</button>
     </div>
+    <div class="misc-section" id="aboutme">
+      <div class="text-block-container">
+        <h1>About Me</h1>
+        <p class="aboutme-section-description">I am a graduate of sociology now turned full-time Software Engineer. I offer fully-fledged Websites utilizing HTML, CSS, JavaScript, BootStrap, TypeScript, SASS, Tailwind, Framer-Motion, MongoDB, Sanity built upon the renowned React Framework NEXT JS. Tailored for full stack developers, it's ideal for Tech Companies, Photo Studios, Real Estate agencies and more. Its responsiveness and functionalities ensures a stunning display and seamless interactivity across diverse devices, from laptops and tablets to mobiles.</p>
+      </div>
+    </div>
   </body>
 </html>
-<style>
 
+<style>
   *{
     box-sizing: border-box;
     font-family: Armata ;
@@ -25,11 +32,20 @@
 
 
   .main-section {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-size: cover;
     padding: 25px;
-    /* border: solid white 1px; */
+}
+
+.misc-section{
+  width: 100%;
+  padding: 100px 25px;
+}
+
+.text-block-container{
+  width: 65%;
+  margin: 0 auto;
 }
 </style>
 <script>

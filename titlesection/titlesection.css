@@ -3,10 +3,6 @@
     --titleSectionSecondaryColor: rgb(219, 191, 131);
 }
 
-h1 {
-    color: var(--titleSectionPrimaryColor);
-}
-
 #title {
     text-align: center;
     padding-top: 200px;
@@ -18,6 +14,7 @@ h1 {
 
 .title-section-header {
     margin-bottom: -5px;
+    color: var(--titleSectionPrimaryColor);
 }
 
 .title-section-subtitle{
