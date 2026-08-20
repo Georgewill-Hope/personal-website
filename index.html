@@ -32,7 +32,19 @@
     </div>
     <div class="main-section" id="craps-game">
       <h1 class="craps-game-title">Craps Casino Game</h1>
-      <div class="craps-game-container"></div>
+      <div class="craps-game-container">
+        <div class="craps-registration-pane">
+          <div>
+            Enter username to begin
+          </div>
+          <div>
+            <input type="text" class="craps-registration-input" id="craps-username-input">
+          </div>
+          <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
+            Continue
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
@@ -78,5 +90,9 @@
       'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOtFjSYaEhNSRUXB2j2a02BrkHG9cqgi8goUoj00p_qw&s=10")';
 
     document.getElementById("title").style.visibility = "hidden";
+  }
+
+  function registerCrapsPlayer() {
+    let crapsUsername = alert(document.getElementById("craps-username-input").value)
   }
 </script>
