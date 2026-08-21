@@ -1,32 +1,74 @@
 <html>
   <head>
-    <link rel="stylesheet" href="./titlesection/titlesection.css">
-    <link rel="stylesheet" href="./aboutmesection/aboutmesection.css">
-    <link rel="stylesheet" href="./crapsgame/crapsgame.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Armata">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="./titlesection/titlesection.css" />
+    <link rel="stylesheet" href="./aboutmesection/aboutmesection.css" />
+    <link rel="stylesheet" href="./crapsgame/crapsgame.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Armata"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-section" id="title">
       <h1 class="title-section-header">Georgewill Hope</h1>
-      <p class="title-section-subtitle">Empowering Individuals Through Education</p>
-      <button class="title-section-button" onclick="makeDreamComeTrue()">Combine Knowledge with action</button>
+      <p class="title-section-subtitle">
+        Empowering Individuals Through Education
+      </p>
+      <button class="title-section-button" onclick="makeDreamComeTrue()">
+        Combine Knowledge with action
+      </button>
     </div>
     <div class="misc-section" id="aboutme">
       <div class="text-block-container">
         <h1>About Me</h1>
-        <p class="aboutme-section-description">I am a graduate of sociology now turned full-time Software Engineer. I offer fully-fledged Websites utilizing HTML, CSS, JavaScript, BootStrap, TypeScript, SASS, Tailwind, Framer-Motion, MongoDB, Sanity built upon the renowned React Framework NEXT JS. Tailored for full stack developers, it's ideal for Tech Companies, Photo Studios, Real Estate agencies and more. Its responsiveness and functionalities ensures a stunning display and seamless interactivity across diverse devices, from laptops and tablets to mobiles.</p>
+        <p class="aboutme-section-description">
+          I am a graduate of sociology now turned full-time Software Engineer. I
+          offer fully-fledged Websites utilizing HTML, CSS, JavaScript,
+          BootStrap, TypeScript, SASS, Tailwind, Framer-Motion, MongoDB, Sanity
+          built upon the renowned React Framework NEXT JS. Tailored for full
+          stack developers, it's ideal for Tech Companies, Photo Studios, Real
+          Estate agencies and more. Its responsiveness and functionalities
+          ensures a stunning display and seamless interactivity across diverse
+          devices, from laptops and tablets to mobiles.
+        </p>
 
         <div class="aboutme-icons">
-          <a href="https://x.com/HopeGeorge20065?t=7ht8fkufZnX_yCedhwkxcw&s=09" target="_blank"><i class="aboutme-icon fa-brands fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/georgewillhopeolilenya?igsh=MWw4eGw0dWoxamxvdw==" target="_blank"><i class="aboutme-icon fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61559871447466&mibextid=ZbWKwl" target="_blank"><i class="aboutme-icon fa-brands fa-square-facebook"></i></a>
-          <a href="mailto:georgewillhopeolilenya@gmail.com"><i class="aboutme-icon fa-regular fa-envelope"></i></a>
-          <a href="https://x.com/HopeGeorge20065?t=7ht8fkufZnX_yCedhwkxcw&s=09" target="_blank"><i class="aboutme-icon fa-brands fa-x-twitter"></i></a>
+          <a
+            href="https://x.com/HopeGeorge20065?t=7ht8fkufZnX_yCedhwkxcw&s=09"
+            target="_blank"
+            ><i class="aboutme-icon fa-brands fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/georgewillhopeolilenya?igsh=MWw4eGw0dWoxamxvdw=="
+            target="_blank"
+            ><i class="aboutme-icon fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61559871447466&mibextid=ZbWKwl"
+            target="_blank"
+            ><i class="aboutme-icon fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="mailto:georgewillhopeolilenya@gmail.com"
+            ><i class="aboutme-icon fa-regular fa-envelope"></i
+          ></a>
+          <a
+            href="https://x.com/HopeGeorge20065?t=7ht8fkufZnX_yCedhwkxcw&s=09"
+            target="_blank"
+            ><i class="aboutme-icon fa-brands fa-x-twitter"></i
+          ></a>
         </div>
 
         <div class="aboutme-download-link">
-          <a href="aboutmesection/Georgewill-hope-olilenya-cv (1).docx" download target="_blank">Download My CV</a>
+          <a
+            href="aboutmesection/Georgewill-hope-olilenya-cv (1).docx"
+            download
+            target="_blank"
+            >Download My CV</a
+          >
         </div>
       </div>
     </div>
@@ -34,35 +76,38 @@
       <h1 class="craps-game-title">Craps Casino Game</h1>
       <div class="craps-game-container">
         <div id="craps-registration-pane">
+          <div>Enter username to begin</div>
           <div>
-            Enter username to begin
+            <input
+              type="text"
+              class="craps-registration-input"
+              id="craps-username-input"
+            />
           </div>
-          <div>
-            <input type="text" class="craps-registration-input" id="craps-username-input">
-          </div>
-          <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
+          <div
+            class="craps-registration-continue"
+            onclick="registerCrapsPlayer()"
+          >
             Continue
           </div>
         </div>
-        <div id="craps-main-section">
-          MAIN SECTION HERE
-        </div>
+        <div id="craps-main-section">MAIN SECTION HERE</div>
       </div>
     </div>
   </body>
 </html>
 
 <style>
-  *{
+  * {
     box-sizing: border-box;
-    font-family: Armata ;
+    font-family: Armata;
   }
 
-  html, body{
+  html,
+  body {
     margin: 0px;
     padding: 0px;
   }
-
 
   .main-section {
     width: 100%;
@@ -71,21 +116,21 @@
     padding: 25px;
   }
 
-  .misc-section{
+  .misc-section {
     width: 100%;
     padding: 120px 25px;
   }
 
-  .text-block-container{
+  .text-block-container {
     width: 65%;
     margin: 0 auto;
   }
 
-  @media screen and (max-width:500px) {
-    .text-block-container{
-    width: 100%;
+  @media screen and (max-width: 500px) {
+    .text-block-container {
+      width: 100%;
+    }
   }
-}
 </style>
 <script src="./crapsgame/crapsgame.js"></script>
 <script>
@@ -95,6 +140,4 @@
 
     document.getElementById("title").style.visibility = "hidden";
   }
-
-  
 </script>
