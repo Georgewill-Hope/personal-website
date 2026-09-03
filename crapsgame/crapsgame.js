@@ -1,9 +1,13 @@
 // Craps Main Data
-let crapsUsername
+let crapsUsername;
 
-// Craps Game Money
-const startingMoney = 1000
-const startingRounds = 0
+// Craps Game Settings
+const startingMoney = 1000;
+const startingRounds = 0;
+const bets = {
+  even: "EVEN",
+  odd: "ODD",
+};
 
 // HTML Element IDs
 const crapsUsernameInput = "craps-username-input";
@@ -14,8 +18,9 @@ const crapsStatsMoney = "craps-stats-money";
 const crapsStatsRounds = "craps-stats-rounds";
 
 // In-game variables
-let currentRounds = startingRounds
-let currentMoney = startingMoney
+let currentRounds = startingRounds;
+let currentMoney = startingMoney;
+let currentBet = bets.even;
 
 function registerCrapsPlayer() {
   crapsUsername = document.getElementById(crapsUsernameInput).value;
@@ -31,7 +36,7 @@ function registerCrapsPlayer() {
   } else {
     removeRegistrationPane();
     showMainGameSection();
-    setupFirstRound()
+    setupFirstRound();
   }
 }
 
@@ -45,17 +50,33 @@ function showMainGameSection() {
 
 function setupFirstRound() {
   document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
-  currentMoney = startingMoney
-  currentRounds = startingRounds
-  setMoney(currentMoney)
-  setRounds(currentRounds)
+  currentMoney = startingMoney;
+  currentRounds = startingRounds;
+  setMoney(currentMoney);
+  setRounds(currentRounds);
+  betEven()
 }
 
 function setMoney(money) {
   document.getElementById(crapsStatsMoney).innerHTML = money;
-  
 }
+
 function setRounds(round) {
   document.getElementById(crapsStatsRounds).innerHTML = round;
-  
+}
+
+function betEven() {
+  chooseBet(bets.even);
+  document.getElementById("EVEN").style.b;
+}
+
+function betOdd() {
+  chooseBet(bets.odd);
+}
+
+function chooseBet(bet) {
+  currentBet = bet;
+  document.getElementById(bet).style.backgroundColor = "red";
+  const deselectBet = bet == bets.even ? bets.odd : bets.even;
+  document.getElementById(deselectBet).style.backgroundColor = "transparent";
 }
