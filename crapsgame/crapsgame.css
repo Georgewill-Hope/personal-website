@@ -2,7 +2,7 @@
   --width-scale: min(700px, 80vw, 80vh);
   --height-scale: calc(var(--width-scale) * 0.714);
   --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
-  --title-margin-bottom:calc(var(--height-scale) * 0.25);
+  --title-margin-bottom: calc(var(--height-scale) * 0.25);
 }
 
 #craps-game {
@@ -15,7 +15,12 @@
 .craps-game-title {
   font-size: var(--game-title-size);
   text-align: center;
-  margin-top: calc(calc(100vh - var(--game-title-size) - var(--title-margin-bottom) - var(--height-scale)) / 2);
+  margin-top: calc(
+    calc(
+        100vh - var(--game-title-size) - var(--title-margin-bottom) -
+          var(--height-scale)
+      ) / 2
+  );
   margin-bottom: var(--title-margin-bottom);
 }
 
@@ -30,7 +35,8 @@
 }
 
 #craps-registration-pane {
-  margin-top: 55px;
+  margin-top: calc(var(--height-scale) * 0.15);
+  font-size: calc(var(--game-title-size) * 0.5);
   text-align: center;
 }
 
@@ -39,17 +45,14 @@
   border: none;
   outline: none;
   border-bottom: solid white 1px;
-  margin-top: 25px;
+  margin: calc(var(--height-scale) * 0.055) 0;
   color: white;
+  font-size: calc(var(--game-title-size) * 0.5);
   text-align: center;
 }
 
 .craps-registration-input:focus {
   outline-width: 0;
-}
-
-.craps-registration-continue {
-  margin-top: 25px;
 }
 
 .craps-registration-continue:hover {
@@ -63,10 +66,11 @@
 
 .craps-main-section-stats {
   text-align: center;
-  margin-top: 70px;
+  font-size: calc(var(--height-scale) * 0.04);
+  margin-top: calc(var(--height-scale) * 0.15);
 }
 
 #craps-stats-money-container {
-  font-size: 30px;
-  margin: 25px 0 5px 0;
+  font-size: calc(var(--height-scale) * 0.085);
+  margin-top: calc(var(--height-scale) * 0.04);
 }
