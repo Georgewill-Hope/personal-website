@@ -115,7 +115,9 @@ function rollDice() {
   });
 }
 
-function formatDiceScale() {
+window.addEventListener("resize", formatDiceScale)
+
+function formatDiceScale() {  
   const vw = window.innerWidth * 0.8;
   const vh = window.innerHeight * 0.8;
   const widthScale = Math.min(700, vw, vh);
