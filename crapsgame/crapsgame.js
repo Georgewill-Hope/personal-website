@@ -115,7 +115,7 @@ function rollDice() {
   rollADie({
     element: diceRollElement,
     numberOfDice: 2,
-    callback: processDiceResult,
+    callback: delayedProcessDiceResult,
     delay: 10000000,
   });
 }
@@ -133,6 +133,12 @@ function formatDiceScale() {
   ).style.transform = `scale(${scale})`;
 }
 
+function delayedProcessDiceResult(diceResult) {
+  setTimeout( function(){
+    processDiceResult(diceResult);
+  }, 1000);
+}
+
 function processDiceResult(diceResult) {
   const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
   let diceSumResult = bets.even;
@@ -140,12 +146,12 @@ function processDiceResult(diceResult) {
     diceSumResult = bets.odd;
   }
 
-  setRounds(currentRounds + 1)
+  setRounds(currentRounds + 1);
   if (diceSumResult === currentBet) {
     // alert("YOU WIN!");
-    setMoney(currentMoney + currentBetAmount)
+    setMoney(currentMoney + currentBetAmount);
   } else {
     // alert("YOU LOOSE!");
-    setMoney(currentMoney - currentBetAmount)
+    setMoney(currentMoney - currentBetAmount);
   }
 }
