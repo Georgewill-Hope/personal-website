@@ -26,6 +26,7 @@ let currentRounds = startingRounds;
 let currentMoney = startingMoney;
 let currentBet = bets.even;
 let currentBetAmount = minimumBet;
+let canChangebBet = true;
 
 function registerCrapsPlayer() {
   crapsUsername = document.getElementById(crapsUsernameInput).value;
@@ -55,25 +56,24 @@ function showMainGameSection() {
 
 function setupFirstRound() {
   document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
-  currentMoney = startingMoney;
-  currentRounds = startingRounds;
-  setMoney(currentMoney);
-  setRounds(currentRounds);
+  setMoney(startingMoney);
+  setRounds(startingRounds);
   betEven();
   setBetAmount(minimumBet);
 }
 
 function setMoney(money) {
+  currentMoney = money;
   document.getElementById(crapsStatsMoney).innerHTML = money;
 }
 
 function setRounds(round) {
+  currentRounds = round;
   document.getElementById(crapsStatsRounds).innerHTML = round;
 }
 
 function betEven() {
   chooseBet(bets.even);
-  document.getElementById("EVEN").style.b;
 }
 
 function betOdd() {
@@ -81,10 +81,12 @@ function betOdd() {
 }
 
 function chooseBet(bet) {
-  currentBet = bet;
-  document.getElementById(bet).style.backgroundColor = "red";
-  const deselectBet = bet == bets.even ? bets.odd : bets.even;
-  document.getElementById(deselectBet).style.backgroundColor = "transparent";
+  if (canChangebBet) {
+    currentBet = bet;
+    document.getElementById(bet).style.backgroundColor = "red";
+    const deselectBet = bet == bets.even ? bets.odd : bets.even;
+    document.getElementById(deselectBet).style.backgroundColor = "transparent";
+  }
 }
 
 function increaseBet() {
@@ -96,12 +98,15 @@ function decreaseBet() {
 }
 
 function setBetAmount(betAmount) {
-  currentBetAmount = betAmount;
-  crapsUsername = document.getElementById(crapsUserBetAmount).innerHTML =
-    "$" + betAmount;
+  if (canChangebBet) {
+    currentBetAmount = betAmount;
+    crapsUsername = document.getElementById(crapsUserBetAmount).innerHTML =
+      "$" + betAmount;
+  }
 }
 
 function rollDice() {
+  canChangebBet = false;
   formatDiceScale();
   document.getElementById(crapsRollDiceButton).style.display = "none";
   const diceRollElement = document.getElementById(
@@ -115,17 +120,32 @@ function rollDice() {
   });
 }
 
-window.addEventListener("resize", formatDiceScale)
+window.addEventListener("resize", formatDiceScale);
 
-function formatDiceScale() {  
+function formatDiceScale() {
   const vw = window.innerWidth * 0.8;
   const vh = window.innerHeight * 0.8;
   const widthScale = Math.min(700, vw, vh);
   const heightScale = widthScale * 0.714;
   const scale = heightScale / 441.53760000000005;
-  document.getElementById(crapsRollDiceAnimationContainer).style.transform = "scale(" + scale + ")"
+  document.getElementById(
+    crapsRollDiceAnimationContainer
+  ).style.transform = `scale(${scale})`;
 }
 
 function processDiceResult(diceResult) {
-  console.log(diceResult);
+  const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
+  let diceSumResult = bets.even;
+  if (sum % 2 === 1) {
+    diceSumResult = bets.odd;
+  }
+
+  setRounds(currentRounds + 1)
+  if (diceSumResult === currentBet) {
+    // alert("YOU WIN!");
+    setMoney(currentMoney + currentBetAmount)
+  } else {
+    // alert("YOU LOOSE!");
+    setMoney(currentMoney - currentBetAmount)
+  }
 }
