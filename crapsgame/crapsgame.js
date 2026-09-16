@@ -29,7 +29,7 @@ let currentRounds = startingRounds;
 let currentMoney = startingMoney;
 let currentBet = bets.even;
 let currentBetAmount = minimumBet;
-let canChangebBet = true;
+let canChangeBet = true;
 
 function registerCrapsPlayer() {
   crapsUsername = document.getElementById(crapsUsernameInput).value;
@@ -49,6 +49,10 @@ function registerCrapsPlayer() {
   }
 }
 
+function showRegistrationPane() {
+  document.getElementById(crapsRegistrationPane).style.display = "block";
+}
+
 function removeRegistrationPane() {
   document.getElementById(crapsRegistrationPane).style.display = "none";
 }
@@ -56,10 +60,18 @@ function removeRegistrationPane() {
 function showMainGameSection() {
   document.getElementById(crapsMainSection).style.display = "block";
 }
+function hideMainGameSection() {
+  document.getElementById(crapsMainSection).style.display = "none";
+}
 
 function setupFirstRound() {
+  document.getElementById(crapsRollDiceAnimationContainer).style.display =
+  "none";
   document.getElementById(crapsRoundFinishGridContainer).style.display = "none";
+  document.getElementById(crapsRollDiceButton).style.display = "block";
+  document.getElementById(crapsBettingGridContainer).style.display = "block";
   document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
+  canChangeBet = true;
   setMoney(startingMoney);
   setRounds(startingRounds);
   betEven();
@@ -85,7 +97,7 @@ function betOdd() {
 }
 
 function chooseBet(bet) {
-  if (canChangebBet) {
+  if (canChangeBet) {
     currentBet = bet;
     document.getElementById(bet).style.backgroundColor = "red";
     const deselectBet = bet == bets.even ? bets.odd : bets.even;
@@ -102,7 +114,7 @@ function decreaseBet() {
 }
 
 function setBetAmount(betAmount) {
-  if (canChangebBet) {
+  if (canChangeBet) {
     currentBetAmount = betAmount;
     crapsUsername = document.getElementById(crapsUserBetAmount).innerHTML =
       "$" + betAmount;
@@ -110,8 +122,10 @@ function setBetAmount(betAmount) {
 }
 
 function rollDice() {
-  canChangebBet = false;
+  canChangeBet = false;
   formatDiceScale();
+  document.getElementById(crapsRollDiceAnimationContainer).style.display =
+    "block";
   document.getElementById(crapsRollDiceButton).style.display = "none";
   const diceRollElement = document.getElementById(
     crapsRollDiceAnimationContainer
@@ -130,6 +144,7 @@ function formatDiceScale() {
   const vw = window.innerWidth * 0.8;
   const vh = window.innerHeight * 0.8;
   const widthScale = Math.min(700, vw, vh);
+
   const heightScale = widthScale * 0.714;
   const scale = heightScale / 441.53760000000005;
   document.getElementById(
@@ -151,22 +166,30 @@ function processDiceResult(diceResult) {
   }
 
   setRounds(currentRounds + 1);
-  let roundFinishMessage = ""
+  let roundFinishMessage = "";
   if (diceSumResult === currentBet) {
     // alert("YOU WIN!");
-    roundFinishMessage = "YOU WIN!"
+    roundFinishMessage = "YOU WIN!";
     setMoney(currentMoney + currentBetAmount);
   } else {
     // alert("YOU LOOSE!");
-    roundFinishMessage = "YOU LOSE😢"
+    roundFinishMessage = "YOU LOSE";
     setMoney(currentMoney - currentBetAmount);
   }
 
   if (currentMoney === 0) {
-    roundFinishMessage = "YOU'RE OUT!"
+    roundFinishMessage = "YOU'RE OUT!";
   }
   document.getElementById(crapsBettingGridContainer).style.display = "none";
   document.getElementById(crapsRoundFinishGridContainer).style.display =
     "block";
-  document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
+  document.getElementById(crapsRoundFinishMessage).innerHTML =
+    roundFinishMessage;
+}
+
+function exitGame() {
+  alert(`After playing ${currentRounds} ${currentRounds > 1 ? "rounds" : "round"}, you leave with ${currentMoney}$`)
+  hideMainGameSection();
+  showRegistrationPane();
+  document.getElementById(crapsUsernameInput).value = "";
 }
