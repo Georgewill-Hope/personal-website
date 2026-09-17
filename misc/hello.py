@@ -7,3 +7,14 @@ for i in range(1, 51):
         print("Buzz")
     else:
         print(i)
+
+rows = 9
+print(f"For rows = {rows}")
+
+for row in range(1, rows + 1):
+    printValue = ""
+    for column in range(row):
+        printValue += "*"
+        
+    print(printValue)
+
