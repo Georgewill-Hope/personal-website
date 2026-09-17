@@ -34,12 +34,17 @@ let indexOfLongestString = 0;
 let maxLength = 0;
 
 for (let i = 0; i < groceryList.length; i++) {
-    let elementLength = groceryList[i].length
+  let elementLength = groceryList[i].length;
   if (elementLength > maxLength) {
-      indexOfLongestString = i
-      maxLength = elementLength
+    indexOfLongestString = i;
+    maxLength = elementLength;
   }
 }
 
 console.log(groceryList);
-console.log("Index of longest string in the array is: " + indexOfLongestString + " which is " + groceryList[indexOfLongestString]);
+console.log(
+  "Index of longest string in the array is: " +
+    indexOfLongestString +
+    " which is " +
+    groceryList[indexOfLongestString]
+);
