@@ -31,22 +31,16 @@ const getRandomColorCombo = () => {
 };
 
 const getNewRandomQuote = async () => {
-  fetch("http://api.quotable.io/quotes/random")
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      const colorCombo = getRandomColorCombo();
-      randomQuoteGeneratorElement.style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
-      const quoteText = data[0].content;
-      const quoteAuthor = data[0].author;
-      document.getElementById("random-quote-text").innerHTML = quoteText;
-      document.getElementById("random-quote-author").innerHTML = quoteAuthor;
-    })
-    .catch((err) => {
-      alert("There was a problem getting a new quote", err);
-    });
+  const response = await fetch("http://api.quotable.io/quotes/random");
+  if (!response.ok) {
+    alert("There was a problem getting a new quote");
+  }
+  const data = await response.json();
+  const quoteText = data[0].content;
+  const quoteAuthor = data[0].author;
+  document.getElementById("random-quote-text").innerHTML = quoteText;
+  document.getElementById("random-quote-author").innerHTML = quoteAuthor;
+
+  const colorCombo = getRandomColorCombo();
+  randomQuoteGeneratorElement.style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
 };
