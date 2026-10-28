@@ -1,0 +1,23 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "homepage": "https://github.com/Georgewill-Hope/personal-website#readme",
+  "bugs": {
+    "url": "https://github.com/Georgewill-Hope/personal-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Georgewill-Hope/personal-website.git"
+  },
+  "license": "ISC",
+  "author": "Georgewill Hope",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
