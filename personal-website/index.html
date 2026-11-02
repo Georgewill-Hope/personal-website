@@ -175,18 +175,7 @@
       </div>
     </div>
     <div class="main-section" id="stock-analysis-dashboard">
-      <div>
-        <div id="stock-analysis-dashboarde-title">STOCK ANALYSIS DASHBOARD</div>
-
-        <div id="stock-analysis-dashboard-subtitle">
-          Put in a stock symbol you'd like to analyze(e.g. MSFT)
-        </div>
-        <input type="text" id="stock-analysis-dashboard-input" />
-        <button class="stock-analysis-dashboard-button" onclick="analyzeStock()">
-          Analyze
-        </button>
-        <div id="stock-analysis-dashboard-data"></div>
-      </div>
+      <div id="root"></div>
     </div>
   </body>
 </html>
@@ -229,6 +218,7 @@
 <script src="./src/crapsgame/crapsgame.js"></script>
 <script src="/src/randomQuoteGenerator/randomQuoteGenerator.js"></script>
 <script src="/src/stockAnalysisDashboard/stockAnalysisDashboard.js"></script>
+<script type="module" src="./src/main.tsx"></script>
 <script
   type="text/javascript"
   src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
@@ -242,6 +232,5 @@
   }
 </script>
 
-  
-  <!-- <div id="root"></div> -->
-  <!-- <script type="module" src="./src/main.tsx"></script>  -->
+<!-- <div id="root"></div> -->
+<!-- <script type="module" src="./src/main.tsx"></script>  -->
