@@ -4,7 +4,9 @@ export const analyzeStock = async (stockSymbolToAnalyze: string) => {
     alert("You must put in a ticker symbol before running the analysis");
     return;
   }
+
   const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -12,5 +14,6 @@ export const analyzeStock = async (stockSymbolToAnalyze: string) => {
   }
 
   const data = await response.json();
+  
   return data;
 };
