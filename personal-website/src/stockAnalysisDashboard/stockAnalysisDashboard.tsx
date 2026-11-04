@@ -6,6 +6,7 @@ import {
 } from "./stockAnalysisDashboard";
 import { Oval } from "react-loader-spinner";
 import "./stockAnalysisDashboard.css";
+import DashboardGrid from "./dashboardGrid";
 
 function StockAnalysisDashboard() {
   const [stockData, setStockData] = useState<any>();
@@ -35,7 +36,9 @@ function StockAnalysisDashboard() {
       <VerticalAlignContainer>
         <VerticalAlignContent>
           <div onClick={goBack}>Back</div>
-          <div>{JSON.stringify(stockData)}</div>
+          <DashboardGrid stockData={stockData}>
+            {/* {JSON.stringify(stockData)} */}
+          </DashboardGrid>
         </VerticalAlignContent>
       </VerticalAlignContainer>
     );
