@@ -52,7 +52,15 @@ const DashboardGrid = ({ stockData }: { stockData: any }) => {
         {/* Second row */}
         <div className="grid-stack-item" gs-w="10" gs-h="3">
           <DashboardGridContent className="grid-stack-item-content">
-            <LineChartContent priceHistory={stockData.priceHistory}/>
+            <LineChartContent priceHistory={stockData.priceHistory} />
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="2" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <div style={{marginBottom:"10px"}}>Future Earnings</div>
+            {stockData.futureEarningsDates?.map((nextDate: string) => (
+              <div key={nextDate}>{nextDate}</div>
+            ))}
           </DashboardGridContent>
         </div>
       </div>
