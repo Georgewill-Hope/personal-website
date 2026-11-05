@@ -40,3 +40,4 @@ export const DashboardGridContent = styled.div`
   border-radius: 5px;
   padding: 15px;
 `
+export const PrimaryColor = "#467bb0"
