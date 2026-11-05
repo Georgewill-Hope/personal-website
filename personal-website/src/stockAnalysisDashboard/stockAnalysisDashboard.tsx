@@ -3,6 +3,7 @@ import {
   analyzeStock,
   VerticalAlignContainer,
   VerticalAlignContent,
+  DashboardGridContainer,
 } from "./stockAnalysisDashboard";
 import { Oval } from "react-loader-spinner";
 import "./stockAnalysisDashboard.css";
@@ -35,10 +36,12 @@ function StockAnalysisDashboard() {
     return (
       <VerticalAlignContainer>
         <VerticalAlignContent>
-          <div onClick={goBack}>Back</div>
-          <DashboardGrid stockData={stockData}>
-            {/* {JSON.stringify(stockData)} */}
-          </DashboardGrid>
+          <DashboardGridContainer>
+            <div onClick={goBack}>Back</div>
+            <DashboardGrid stockData={stockData}>
+              {/* {JSON.stringify(stockData)} */}
+            </DashboardGrid>
+          </DashboardGridContainer>
         </VerticalAlignContent>
       </VerticalAlignContainer>
     );
