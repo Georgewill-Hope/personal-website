@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { DashboardGridContent } from "./stockAnalysisDashboard";
 import NumberStat from "./numberStat";
 import LineChartContent from "./lineChartContent";
+import NewsList from "./newsLinks";
 
 const DashboardGrid = ({ stockData }: { stockData: any }) => {
   useEffect(() => {
@@ -57,10 +58,16 @@ const DashboardGrid = ({ stockData }: { stockData: any }) => {
         </div>
         <div className="grid-stack-item" gs-w="2" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
-            <div style={{marginBottom:"10px"}}>Future Earnings</div>
+            <div style={{ marginBottom: "10px" }}>Future Earnings</div>
             {stockData.futureEarningsDates?.map((nextDate: string) => (
               <div key={nextDate}>{nextDate}</div>
             ))}
+          </DashboardGridContent>
+        </div>
+        {/* Third Row */}
+        <div className="grid-stack-item" gs-w="5" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NewsList newsLinks={stockData.newsArticle} />
           </DashboardGridContent>
         </div>
       </div>
