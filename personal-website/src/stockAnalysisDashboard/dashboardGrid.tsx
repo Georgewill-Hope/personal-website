@@ -3,6 +3,7 @@ import { GridStack } from "gridstack";
 import { useEffect } from "react";
 import { DashboardGridContent } from "./stockAnalysisDashboard";
 import NumberStat from "./numberStat";
+import LineChartContent from "./lineChartContent";
 
 const DashboardGrid = ({ stockData }: { stockData: any }) => {
   useEffect(() => {
@@ -46,6 +47,12 @@ const DashboardGrid = ({ stockData }: { stockData: any }) => {
               label="Earnings Per Share"
               center={true}
             />
+          </DashboardGridContent>
+        </div>
+        {/* Second row */}
+        <div className="grid-stack-item" gs-w="10" gs-h="3">
+          <DashboardGridContent className="grid-stack-item-content">
+            <LineChartContent priceHistory={stockData.priceHistory}/>
           </DashboardGridContent>
         </div>
       </div>
