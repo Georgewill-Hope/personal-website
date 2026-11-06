@@ -41,3 +41,6 @@ export const DashboardGridContent = styled.div`
   padding: 15px;
 `
 export const PrimaryColor = "#467bb0"
+export const ThemeGreen = "#7bdb76";
+export const ThemeYellow = "#ffcc5c";
+export const ThemeRed = "#ff6f69";
