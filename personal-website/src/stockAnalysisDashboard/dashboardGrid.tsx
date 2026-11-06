@@ -71,10 +71,18 @@ const DashboardGrid = ({ stockData }: { stockData: any }) => {
             <NewsList newsLinks={stockData.newsArticle} />
           </DashboardGridContent>
         </div>
-        <div className="grid-stack-item" gs-w="5" gs-h="2">
+        <div className="grid-stack-item" gs-w="4" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
             <NewsSentimentAnalysis
               newsTextAnalysis={stockData.newsTextAnalysis}
+            />
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="3" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <img
+              src={`data:image/png;base64,${stockData.newsTextAnalysis.data.wordCloudImage}`}
+              style={{height:"100%", width:"100%"}}
             />
           </DashboardGridContent>
         </div>
