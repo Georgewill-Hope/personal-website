@@ -29,7 +29,7 @@
   height: var(--height-scale);
   border: solid white 2px;
   margin: 0 auto;
-  background-image: url("../images/craps-table.jpg");
+  background-image: url("../images/craps-table.png");
   background-size: cover;
   background-position: center top;
   position: relative;
