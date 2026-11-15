@@ -5,8 +5,13 @@ export const analyzeStock = async (stockSymbolToAnalyze: string) => {
     alert("You must put in a ticker symbol before running the analysis");
     return;
   }
-
-  const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+  // Locals
+  // const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+  // Subnet
+  // const url = `http://172.29.110.125:5000/analyze-stock/${stockSymbolToAnalyze}`;
+  // const url = `https://ankle-reviver-roulette.ngrok-free.dev/analyze-stock/${stockSymbolToAnalyze}`;
+  // Production
+  const url = `https://text-analysis-tool-xuvt.onrender.com/analyze-stock/${stockSymbolToAnalyze}`;
 
   const response = await fetch(url);
 
